@@ -1,0 +1,16 @@
+.brand strong{font-size:.74rem}
+.brand span{font-size:.6rem}
+.site-header nav{font-size:.69rem}
+.eyebrow{font-size:.66rem}
+.hero h1,.about-intro h1{font-size:clamp(2rem,3.05vw,3.25rem);line-height:1.07;letter-spacing:-.024em}
+.hero-aside p{font-size:.86rem;line-height:1.65}
+.project-card h2{font-size:clamp(.82rem,.9vw,.95rem);margin-top:.65rem}
+.writing h2{font-size:clamp(1.8rem,2.8vw,2.75rem);line-height:1.08}
+.writing>div>p{font-size:.86rem;line-height:1.65}
+.writing .text-link{font-size:.8rem}
+.site-footer h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.06}
+.footer-links a{font-size:.76rem}
+.about-intro h1{font-size:clamp(2.3rem,4.1vw,4.2rem)}
+.case-hero h1{font-size:clamp(2.35rem,4.3vw,4.4rem);line-height:1.03}
+.case-content h2{font-size:clamp(1.6rem,2.35vw,2.45rem);line-height:1.14}
+@media(max-width:760px){.hero h1{font-size:clamp(1.9rem,7.8vw,2.7rem)}}
