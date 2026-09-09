@@ -1,6 +1,7 @@
 ### Data Portfolio
 
 Static editorial portfolio built for GitHub Pages.
+Link: https://debvieira.github.io
 
 ### Publish
 
