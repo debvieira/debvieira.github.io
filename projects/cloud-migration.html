@@ -28,52 +28,144 @@
 </nav>
 </header>
 <main>
-<section class="case-hero wrap reveal">
+<section class="case-hero cloud-case-hero wrap reveal">
 <div class="case-topline">
 <span>Professional case study</span>
 <span>2025–2026</span>
 </div>
-<p class="case-status">Case study in progress — additional project details are being added.</p>
 <h1>Tableau to QuickSight<br>
 <em>Cloud Migration</em>
 </h1>
+<div class="case-image-frame">
 <img class="case-image" src="../assets/images/cloud-migration-final.webp" alt="Cloud-based data synchronization representing a Tableau to QuickSight migration">
+</div>
 </section>
-<div class="case-layout wrap">
-<aside class="case-facts">
-<dl>
-<div>
-<dt>Role</dt>
-<dd>Data Analyst / Analytics Engineer</dd>
-</div>
-<div>
-<dt>Scope</dt>
-<dd>30+ dashboards</dd>
-</div>
-<div>
-<dt>Toolkit</dt>
-<dd>AWS Glue, PySpark, Athena, S3, SQL</dd>
-</div>
-<div>
-<dt>Collaboration</dt>
-<dd>International stakeholders</dd>
-</div>
-</dl>
+<div class="case-layout case-study-layout wrap">
+<aside class="case-facts case-nav" aria-label="Case study sections">
+<nav>
+<a href="#overview">Overview</a>
+<a href="#challenge">Challenge</a>
+<a href="#role">My Role</a>
+<a href="#architecture">Data &amp; Architecture</a>
+<a href="#solution">Solution</a>
+<a href="#decisions">Technical Decisions</a>
+<a href="#quality">Data Quality</a>
+<a href="#trade-offs">Challenges &amp; Trade-offs</a>
+<a href="#results">Results &amp; Impact</a>
+<a href="#stack">Tech Stack</a>
+<a href="#learning">What I Learned</a>
+</nav>
 </aside>
 <article class="case-content">
-<section>
-<p class="eyebrow">Challenge</p>
-<h2>Modernize analytics without losing trust in the numbers.</h2>
-<p>The initiative involved migrating more than 30 dashboards from Tableau to Amazon QuickSight while mapping and centralizing multiple data sources in AWS. The work extended beyond visualization: analytical datasets, transformations and business rules also had to be reconstructed and validated.</p>
+<section id="overview">
+<p class="eyebrow">Overview</p>
+<h2>More than a dashboard migration.</h2>
+<p>This project involved migrating more than 30 dashboards from Tableau to Amazon QuickSight across Sales, Aftersales, and Marketing. The initiative aimed to reduce platform costs, centralize data within AWS, simplify maintenance, and improve the underlying data processes.</p>
+<p>As part of the migration, fragmented logic was consolidated—for example, replacing five separate queries with a single optimized query.</p>
 </section>
-<section>
-<p class="eyebrow">Approach</p>
-<h2>Rebuild the data foundation alongside the dashboards.</h2>
-<p>I developed data pipelines and analytical tables with AWS Glue and PySpark, queried data through Athena and organized source discovery with Glue Crawlers. I also rebuilt SQL logic, investigated discrepancies and worked with international stakeholders to align metric definitions.</p>
+<section id="challenge">
+<p class="eyebrow">The Challenge</p>
+<h2>Preserve trust while rebuilding the foundation.</h2>
+<p>The migration involved more than recreating dashboards in a different visualization tool. Each dashboard depended on its own data sources, calculations, filters, and complex business rules.</p>
+<p>Some original sources were outdated or no longer available, which required identifying alternative datasets and validating them with different business teams. The main challenge was ensuring that the migrated dashboards reproduced the same KPIs and business logic while using a more centralized and maintainable architecture.</p>
 </section>
-<section>
-<p class="eyebrow">Outcome</p>
-<p class="result">A more reliable, scalable and maintainable cloud analytics environment supporting the migrated reporting experience.</p>
+<section id="role">
+<p class="eyebrow">My Role</p>
+<h2>From requirements to delivery.</h2>
+<ul>
+<li>Met with stakeholders to understand reporting needs and gather requirements for new metrics and improvements.</li>
+<li>Translated business requirements into data rules, queries, KPIs, and dashboard specifications.</li>
+<li>Cataloged more than 30 dashboards, including their KPIs, filters, charts, calculations, and business rules.</li>
+<li>Mapped Excel, CSV and TXT files, PostgreSQL tables, and existing AWS datasets.</li>
+<li>Worked with business teams to identify replacement sources when original data was unavailable.</li>
+<li>Ingested and centralized data in AWS.</li>
+<li>Developed and maintained data pipelines with AWS Glue and PySpark.</li>
+<li>Recreated and optimized analytical queries in Amazon Athena.</li>
+<li>Consolidated duplicated or fragmented query logic.</li>
+<li>Validated KPIs and compared results between Tableau and QuickSight.</li>
+<li>Imported curated datasets into QuickSight and rebuilt the dashboards.</li>
+<li>Guided colleagues during the final dashboard development phase by explaining the datasets, metrics, filters, and expected visualizations.</li>
+<li>Reviewed dashboards to ensure consistency with business requirements.</li>
+<li>Documented data sources, transformations, validation rules, and migration decisions.</li>
+</ul>
+</section>
+<section id="architecture">
+<p class="eyebrow">Data &amp; Architecture</p>
+<h2>A centralized analytics flow on AWS.</h2>
+<p>The original dashboards consumed data from multiple formats and systems, including Excel spreadsheets, CSV and TXT files, PostgreSQL tables, and existing AWS datasets.</p>
+<p>The new architecture centralized these sources in Amazon S3. AWS Glue pipelines processed and transformed the data, while Amazon Athena provided the analytical layer used by Amazon QuickSight.</p>
+<figure class="architecture-figure">
+<img src="../assets/images/cloud-migration-architecture.png" alt="Data sources flow into Amazon S3, AWS Glue and PySpark, Amazon Athena, and Amazon QuickSight">
+</figure>
+<p>The pipelines were designed to refresh datasets automatically, reducing manual intervention and keeping dashboards up to date.</p>
+</section>
+<section id="solution">
+<p class="eyebrow">Solution</p>
+<h2>Rebuild, validate, and simplify.</h2>
+<p>The migration started with an inventory of the existing dashboards and their dependencies. For each dashboard, I documented its data sources, filters, calculated fields, KPIs, and business rules.</p>
+<p>I met with stakeholders from Sales, Aftersales, and Marketing to understand their current reporting needs. These conversations helped identify new metrics and improvements that could be incorporated during the migration instead of simply reproducing the existing dashboards.</p>
+<p>The required datasets were ingested into Amazon S3 and processed through AWS Glue pipelines. Transformations included data cleaning, standardization, joins, business-rule application, and the preparation of analytics-ready tables.</p>
+<p>I recreated the analytical queries in Amazon Athena and consolidated duplicated logic whenever possible. Before connecting the datasets to QuickSight, I compared the new results with the original Tableau dashboards and investigated discrepancies.</p>
+<p>During the final phase, colleagues supported the creation of charts in QuickSight. With the datasets and queries already prepared, I guided them through the required KPIs, filters, business rules, and expected visual structure, then reviewed the completed dashboards for accuracy and consistency.</p>
+<p>The dashboards and their supporting data processes were documented to simplify future maintenance.</p>
+</section>
+<section id="decisions">
+<p class="eyebrow">Technical Decisions</p>
+<h2>Choices made for scale and maintainability.</h2>
+<div class="decision-list">
+<p><strong>Amazon S3 as the centralized storage layer.</strong> This reduced dependency on scattered files and systems, creating a consistent location for raw and processed data.</p>
+<p><strong>AWS Glue and PySpark for data processing.</strong> They supported higher-volume datasets and transformations that required distributed processing, automation, and scalability.</p>
+<p><strong>Amazon Athena for analytical queries.</strong> Athena enabled SQL queries directly over data stored in S3 without maintaining a dedicated database server and simplified integration with QuickSight.</p>
+<p><strong>SQL for transformation and business logic.</strong> SQL was used to clean, join, aggregate, and standardize datasets while keeping analytical rules readable and easier to validate.</p>
+<p><strong>Consolidated queries.</strong> Similar or duplicated queries were combined to reduce repetition, simplify maintenance, and create a more consistent source of truth.</p>
+</div>
+</section>
+<section id="quality">
+<p class="eyebrow">Data Quality &amp; Reliability</p>
+<h2>Controls throughout the migration.</h2>
+<ul>
+<li>Compared KPIs, totals, record counts, and filters between Tableau and QuickSight.</li>
+<li>Checked mandatory fields, null values, duplicates, data types, and unexpected values.</li>
+<li>Validated joins and aggregations to prevent duplicated or missing records.</li>
+<li>Confirmed business rules and discrepancies with the teams responsible for each subject area.</li>
+<li>Prevented failed or incomplete pipeline outputs from reaching downstream dashboards.</li>
+<li>Used AWS logs to track pipeline execution and support error investigation.</li>
+<li>Configured AWS notifications for pipeline failures.</li>
+<li>Documented validation criteria and known data-source limitations.</li>
+</ul>
+<p>These checks helped prevent inconsistent data from reaching the final dashboards and made issues easier to identify and resolve.</p>
+</section>
+<section id="trade-offs">
+<p class="eyebrow">Challenges &amp; Trade-offs</p>
+<h2>Replication where it mattered, improvement where it helped.</h2>
+<p>One of the main challenges was dealing with original data sources that were outdated or no longer available. In these cases, I collaborated with other teams to identify equivalent datasets and confirm whether they could reproduce the required indicators.</p>
+<p>Another challenge was balancing exact dashboard replication with backend improvement. Users needed consistent metrics and a familiar experience, but reproducing the existing implementation without revision would have preserved duplicated and difficult-to-maintain logic. The migration therefore maintained the business meaning of the dashboards while improving their underlying queries and data flows.</p>
+</section>
+<section id="results">
+<p class="eyebrow">Results &amp; Impact</p>
+<h2>A more maintainable reporting environment.</h2>
+<ul>
+<li>Migrated more than 30 dashboards from Tableau to Amazon QuickSight.</li>
+<li>Added new metrics based on stakeholder requirements.</li>
+<li>Centralized data from multiple departments and source formats within AWS.</li>
+<li>Improved data availability through automated pipeline refreshes.</li>
+<li>Reduced duplicated logic by consolidating and optimizing queries.</li>
+<li>Enabled colleagues to contribute through technical guidance and clearly prepared datasets.</li>
+<li>Maintained consistency through reviews and standardized business rules.</li>
+<li>Simplified future maintenance through standardized pipelines and documentation.</li>
+<li>Supported lower BI platform costs while improving the underlying data architecture.</li>
+</ul>
+</section>
+<section id="stack">
+<p class="eyebrow">Tech Stack</p>
+<p class="stack-line">Python · PySpark · SQL · Amazon S3 · AWS Glue · Amazon Athena · AWS Lambda · Amazon QuickSight · PostgreSQL · Tableau</p>
+</section>
+<section id="learning">
+<p class="eyebrow">What I Learned</p>
+<h2>A BI migration begins with understanding the data.</h2>
+<p>This project reinforced that a BI migration is not simply a matter of recreating charts in another platform. It requires a detailed understanding of data lineage, business rules, source reliability, and how each metric supports business decisions.</p>
+<p>I strengthened my ability to translate stakeholder needs into technical requirements, validate results across platforms, and communicate data discrepancies with different business teams. Guiding colleagues through dashboard development also strengthened my ability to explain technical and business rules while maintaining consistency across deliverables.</p>
+<p>In a future iteration, I would introduce automated reconciliation tests and standardized dashboard-building guidelines earlier in the process. This would make validation more efficient and help multiple contributors work consistently from the beginning.</p>
 </section>
 </article>
 </div>
