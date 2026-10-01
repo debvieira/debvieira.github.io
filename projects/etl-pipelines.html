@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Multi-Client ETL/ELT Pipelines — Débora Vieira</title>
+<title>Multi-Client ETL Pipelines — Débora Vieira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -28,52 +28,174 @@
 </nav>
 </header>
 <main>
-<section class="case-hero wrap reveal">
+<section class="case-hero cloud-case-hero wrap reveal">
 <div class="case-topline">
 <span>Professional case study</span>
 <span>2026</span>
 </div>
-<p class="case-status">Case study in progress — additional project details are being added.</p>
 <h1>Multi-Client<br>
-<em>ETL/ELT Pipelines</em>
+<em>ETL Pipelines</em>
 </h1>
+<div class="case-image-frame">
 <img class="case-image" src="../assets/images/etl-pipelines-final.webp" alt="Extract, transform and load workflow for multi-client data pipelines">
+</div>
 </section>
-<div class="case-layout wrap">
-<aside class="case-facts">
-<dl>
-<div>
-<dt>Role</dt>
-<dd>ETL Developer</dd>
-</div>
-<div>
-<dt>Focus</dt>
-<dd>Data Engineering</dd>
-</div>
-<div>
-<dt>Toolkit</dt>
-<dd>Python, SQL, Pentaho</dd>
-</div>
-<div>
-<dt>Environment</dt>
-<dd>Multi-client data workflows</dd>
-</div>
-</dl>
+<div class="case-layout case-study-layout wrap">
+<aside class="case-facts case-nav" aria-label="Case study sections">
+<nav>
+<a href="#overview">Overview</a>
+<a href="#challenge">Challenge</a>
+<a href="#role">My Role</a>
+<a href="#architecture">Data &amp; Architecture</a>
+<a href="#solution">Solution</a>
+<a href="#rules">Business Rules</a>
+<a href="#decisions">Technical Decisions</a>
+<a href="#quality">Data Quality</a>
+<a href="#monitoring">Monitoring &amp; Errors</a>
+<a href="#improvement">Process Improvement</a>
+<a href="#trade-offs">Challenges &amp; Trade-offs</a>
+<a href="#results">Results &amp; Impact</a>
+<a href="#stack">Tech Stack</a>
+<a href="#learning">What I Learned</a>
+</nav>
 </aside>
 <article class="case-content">
-<section>
+<section id="overview">
 <p class="eyebrow">Overview</p>
-<h2>Reliable pipelines adapted to distinct sources and business rules.</h2>
-<p>I develop and maintain ETL/ELT pipelines for multiple clients, supporting the complete journey from collection and transformation to validation and loading. Each workflow is adapted to its source systems, expected formats and business requirements.</p>
+<h2>Recurring data pipelines for a multi-client operation.</h2>
+<p>This project involved developing and maintaining recurring ETL pipelines for a company that provided payroll-loan data processing services to more than 300 clients.</p>
+<p>I worked with a subset of these clients, processing monthly submissions composed of PDF documents, Excel spreadsheets, and TXT files. Depending on the client, a submission could contain multiple files that needed to be consolidated, validated, transformed, and used in business calculations.</p>
+<p>The objective was to convert heterogeneous client files into standardized and reliable data that could be loaded into the company’s internal platform.</p>
 </section>
-<section>
-<p class="eyebrow">Approach</p>
-<h2>Quality built into the flow.</h2>
-<p>The pipelines include checks for missing information, invalid values and inconsistencies before data reaches downstream reports and business processes. When issues are identified, they are documented and communicated so corrections can happen at the right point in the workflow.</p>
+<section id="challenge">
+<p class="eyebrow">The Challenge</p>
+<h2>Different files, layouts, and rules every month.</h2>
+<p>Each client submitted data using different file structures, naming conventions, column formats, and levels of quality. Some clients provided a single file, while others submitted multiple complementary files that needed to be grouped before calculations could be performed.</p>
+<p>Although the process was recurring, each client could have different layouts and payroll-loan business rules. The pipelines needed to account for rules related to consignable margin, customer age, eligible agreements, refinancing, portability, and customer-registration validation.</p>
+<p>Clients were not automatically notified when a required file was missing or submitted in an unsupported format. As a result, the operations team sometimes needed to identify the problem manually and contact the client before processing could continue.</p>
 </section>
-<section>
-<p class="eyebrow">Outcome</p>
-<p class="result">A maintainable delivery process designed to prevent unreliable data from moving downstream.</p>
+<section id="role">
+<p class="eyebrow">My Role</p>
+<h2>From monthly submission to validated delivery.</h2>
+<ul>
+<li>Analyzed the files submitted by each client and identified their layouts, fields, relationships, and dependencies.</li>
+<li>Consolidated multiple files when a client’s data was divided across different documents or datasets.</li>
+<li>Developed and maintained ETL workflows in Pentaho.</li>
+<li>Wrote SQL queries for transformation, validation, calculation, and loading.</li>
+<li>Used PostgreSQL during data processing and validation.</li>
+<li>Standardized columns, data types, formats, and client-specific structures.</li>
+<li>Translated payroll-loan rules into pipeline transformations and validations.</li>
+<li>Applied rules related to consignable margin, customer age, eligible agreements, refinancing, portability, and registration requirements.</li>
+<li>Validated mandatory fields, duplicated records, invalid values, and inconsistent data.</li>
+<li>Investigated failures caused by incorrect, incomplete, or unexpected source files.</li>
+<li>Validated processed data before making it available in the internal platform.</li>
+<li>Documented client-specific layouts, transformations, and processing rules.</li>
+<li>Identified operational gaps and proposed improvements to the file-submission process.</li>
+</ul>
+</section>
+<section id="architecture">
+<p class="eyebrow">Data &amp; Architecture</p>
+<h2>A monthly flow from client files to the internal platform.</h2>
+<p>Clients submitted their monthly files through the company’s platform. After a submission, the operations team received an alert indicating that new data was available for processing.</p>
+<p>The submitted data could include Excel spreadsheets, TXT files, PDF documents, or multiple complementary files from the same client.</p>
+<p class="stack-line">Client submission → Internal alert → File validation → Pentaho ETL → SQL &amp; PostgreSQL processing → Business-rule validation → Company platform</p>
+<p>When multiple files were submitted, they first needed to be validated, consolidated, and reconciled before business calculations could be applied.</p>
+</section>
+<section id="solution">
+<p class="eyebrow">Solution</p>
+<h2>Validate, consolidate, transform, and deliver.</h2>
+<p>The process started when a client attached its monthly files to the company’s platform. The submission generated an internal notification so that the data-processing workflow could begin.</p>
+<p>I first reviewed whether all expected files had been submitted and whether their formats and layouts were compatible with the pipeline. When a client submitted multiple files, I identified how they were related and consolidated their records using the appropriate business keys.</p>
+<p>The data was then processed through Pentaho workflows. Transformations included column standardization, data-type conversion, record filtering, file consolidation, joins, calculations, and the application of payroll-loan business rules.</p>
+<p>SQL and PostgreSQL were used to validate, transform, and reconcile the data before it was loaded into the company’s platform.</p>
+<p>The processed records were checked for missing mandatory information, duplicated customers, invalid formats, inconsistent values, and violations of business rules. When a file was incomplete or incorrect, I investigated whether the pipeline, source layout, or client submission needed to be corrected.</p>
+</section>
+<section id="rules">
+<p class="eyebrow">Business Rules</p>
+<h2>Payroll-loan rules translated into data logic.</h2>
+<div class="decision-list">
+<p><strong>Consignable margin.</strong> Verifying whether the calculated installment was compatible with the customer’s available payroll margin.</p>
+<p><strong>Customer age.</strong> Applying eligibility or term restrictions according to the customer’s age.</p>
+<p><strong>Eligible agreements.</strong> Validating whether the customer’s employment or benefit agreement was accepted for the requested operation.</p>
+<p><strong>Refinancing.</strong> Identifying whether an existing contract met the required conditions for refinancing.</p>
+<p><strong>Portability.</strong> Validating the information required to transfer an existing loan from one financial institution to another.</p>
+<p><strong>Customer registration.</strong> Checking mandatory information and identifying missing, invalid, or inconsistent fields.</p>
+</div>
+<p>These rules were defined by the business and translated into technical transformations and validation steps within the pipelines.</p>
+</section>
+<section id="decisions">
+<p class="eyebrow">Technical Decisions</p>
+<h2>Choices made for controlled monthly processing.</h2>
+<div class="decision-list">
+<p><strong>Pentaho for pipeline orchestration.</strong> Pentaho organized recurring extraction, transformation, validation, and loading activities while supporting client-specific workflows.</p>
+<p><strong>PostgreSQL and SQL for data processing.</strong> SQL supported joins, calculations, consolidation, deduplication, and business-rule validation before delivery to the internal platform.</p>
+<p><strong>Client-specific workflows.</strong> Because clients submitted different layouts and file combinations, part of the transformation logic needed to remain specific to each client.</p>
+<p><strong>File consolidation before calculations.</strong> When information was distributed across several files, datasets were standardized and joined using defined business keys before calculations were applied.</p>
+<p><strong>Validation before loading.</strong> Incorrect or incomplete data was prevented from reaching the platform whenever the issue could compromise final calculations.</p>
+</div>
+</section>
+<section id="quality">
+<p class="eyebrow">Data Quality &amp; Reliability</p>
+<h2>Controls before data reached the platform.</h2>
+<ul>
+<li>Confirmed whether the expected monthly files had been submitted.</li>
+<li>Checked file formats, extensions, layouts, delimiters, and required columns.</li>
+<li>Verified that complementary files belonged to the same client and reporting period.</li>
+<li>Validated mandatory customer-registration fields.</li>
+<li>Identified duplicated customers or contracts.</li>
+<li>Checked invalid dates, data types, and inconsistent values.</li>
+<li>Validated customer age, agreement eligibility, refinancing, and portability requirements.</li>
+<li>Compared record counts before and after file consolidation.</li>
+<li>Reviewed calculations related to consignable margin.</li>
+<li>Prevented incomplete or incompatible submissions from being processed.</li>
+<li>Validated the final dataset before making it available in the company’s platform.</li>
+</ul>
+</section>
+<section id="monitoring">
+<p class="eyebrow">Monitoring &amp; Error Handling</p>
+<h2>Investigating failures at their source.</h2>
+<p>When a pipeline failed or produced inconsistent results, I investigated missing files, incorrect extensions, unexpected layout changes, missing or renamed columns, invalid registration data, duplicate records, inconsistent relationships between files, business-rule failures, and database or transformation errors.</p>
+<p>Depending on the problem, affected records could be reviewed separately or the process could be paused until the client submission was corrected.</p>
+</section>
+<section id="improvement">
+<p class="eyebrow">Process Improvement Proposal</p>
+<h2>Moving validation closer to the client.</h2>
+<p>I identified a gap in the submission experience: the internal team was notified when files were uploaded, but clients did not receive an automatic warning when a required file was missing or when a file used an unsupported extension.</p>
+<p>I proposed adding automatic validation and client-facing notifications during upload. This improvement would allow clients to correct submission problems earlier, reduce manual communication, and prevent processing from starting with incomplete or incompatible data.</p>
+</section>
+<section id="trade-offs">
+<p class="eyebrow">Challenges &amp; Trade-offs</p>
+<h2>Standardized controls with client-specific logic.</h2>
+<p>A completely standardized pipeline would not accommodate every client layout. However, maintaining fully independent processes increased the amount of client-specific logic that needed to be understood and supported.</p>
+<p>The practical balance was to preserve each client’s required transformations while applying consistent validation stages, processing practices, and delivery criteria.</p>
+<p>Another limitation was that submission problems were generally identified after upload. Without automatic client-facing validation, missing or incorrectly formatted files required manual investigation and communication.</p>
+</section>
+<section id="results">
+<p class="eyebrow">Results &amp; Impact</p>
+<h2>More reliable monthly data processing.</h2>
+<ul>
+<li>Supported monthly data-processing operations in a company serving more than 300 clients.</li>
+<li>Processed client submissions containing PDF, Excel, and TXT files.</li>
+<li>Consolidated multiple files into standardized datasets when necessary.</li>
+<li>Automated transformations and payroll-loan calculations through Pentaho and SQL.</li>
+<li>Applied client-specific eligibility and validation rules.</li>
+<li>Improved the reliability of data loaded into the company’s internal platform.</li>
+<li>Identified incomplete, duplicated, or incompatible data before final delivery.</li>
+<li>Supported the investigation and correction of monthly processing failures.</li>
+<li>Proposed client-facing alerts for missing or incorrectly formatted files.</li>
+</ul>
+</section>
+<section id="stack">
+<p class="eyebrow">Tech Stack</p>
+<p class="stack-line">Pentaho Data Integration · SQL · PostgreSQL · Excel · TXT · PDF · Git</p>
+</section>
+<section id="learning">
+<p class="eyebrow">What I Learned</p>
+<h2>Reliable pipelines begin with reliable submissions.</h2>
+<p>This project reinforced that multi-client data engineering requires more than processing files. Each client may represent the same business process through different layouts, field definitions, and combinations of datasets.</p>
+<p>I strengthened my ability to understand unfamiliar data structures, consolidate information from multiple files, translate payroll-loan rules into technical validations, and investigate inconsistencies across different stages of a pipeline.</p>
+<p>I also learned that data quality should begin at the point of submission. Validating required files and formats before processing would reduce operational delays and prevent avoidable errors from entering the pipeline.</p>
+<p>In a future iteration, I would introduce configuration-driven layouts, automated schema validation, and client-facing submission alerts to make the workflows easier to scale and reduce manual intervention.</p>
 </section>
 </article>
 </div>
