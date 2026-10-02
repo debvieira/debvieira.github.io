@@ -28,52 +28,160 @@
 </nav>
 </header>
 <main>
-<section class="case-hero wrap reveal">
+<section class="case-hero cloud-case-hero wrap reveal">
 <div class="case-topline">
 <span>Professional case study</span>
 <span>2024</span>
 </div>
-<p class="case-status">Case study in progress — additional project details are being added.</p>
 <h1>AI-Powered Customer<br>
 <em>Support Chatbot</em>
 </h1>
+<div class="case-image-frame">
 <img class="case-image" src="../assets/images/ai-chatbot-final.webp" alt="AI-powered customer support chatbot conversation interface">
+</div>
 </section>
-<div class="case-layout wrap">
-<aside class="case-facts">
-<dl>
-<div>
-<dt>Role</dt>
-<dd>Data Analyst</dd>
-</div>
-<div>
-<dt>Focus</dt>
-<dd>Generative AI & integration</dd>
-</div>
-<div>
-<dt>Toolkit</dt>
-<dd>Python, APIs, data workflows</dd>
-</div>
-<div>
-<dt>User rating</dt>
-<dd>95%+ positive</dd>
-</div>
-</dl>
+<div class="case-layout case-study-layout wrap">
+<aside class="case-facts case-nav" aria-label="Case study sections">
+<nav>
+<a href="#overview">Overview</a>
+<a href="#challenge">Challenge</a>
+<a href="#role">My Role</a>
+<a href="#architecture">Data &amp; Architecture</a>
+<a href="#solution">Solution</a>
+<a href="#use-cases">Business Use Cases</a>
+<a href="#decisions">Technical Decisions</a>
+<a href="#quality">Data Quality</a>
+<a href="#trade-offs">Challenges &amp; Trade-offs</a>
+<a href="#results">Results &amp; Impact</a>
+<a href="#stack">Tech Stack</a>
+<a href="#learning">What I Learned</a>
+</nav>
 </aside>
 <article class="case-content">
-<section>
-<p class="eyebrow">Opportunity</p>
-<h2>Use generative AI to support customers while reducing repetitive work.</h2>
-<p>The support operation needed a more scalable way to address recurring requests while preserving a helpful user experience. The solution required more than a conversational layer: it depended on reliable integrations and data workflows behind the interaction.</p>
+<section id="overview">
+<p class="eyebrow">Overview</p>
+<h2>Two AI support experiences for different customer needs.</h2>
+<p>This project involved developing AI-powered chatbots for an application in the automotive sector.</p>
+<p>The solution included a commercial chatbot positioned at the beginning of the application to answer questions about the company’s services, and a technical chatbot available inside the platform to help existing customers with product-related questions.</p>
+<p>The objective was to answer recurring questions without requiring immediate human assistance, improve access to information, and identify common topics that could be incorporated into the company’s FAQ and support materials.</p>
 </section>
-<section>
-<p class="eyebrow">Contribution</p>
-<h2>Connect AI behavior with dependable data flows.</h2>
-<p>I developed generative AI integrations, including chatbots supported by automated data processes. My work connected technical implementation with the quality of the information delivered to users and the operational needs of the support team.</p>
+<section id="challenge">
+<p class="eyebrow">The Challenge</p>
+<h2>Reduce repetitive support without losing relevance.</h2>
+<p>The support team received many recurring questions that could be answered using information already available in company documents, databases, and website content.</p>
+<p>Without an automated first level of support, customers needed human assistance even for common questions. The company also needed a better way to understand which questions appeared most frequently so that FAQs, documentation, and customer communication could be improved.</p>
+<p>Another challenge was serving customers at different stages of their journey. Prospective customers needed commercial information, while existing users required more technical and context-specific guidance inside the platform.</p>
 </section>
-<section>
-<p class="eyebrow">Outcome</p>
-<p class="result">More than 95% positive user ratings and a reduction in the support team's manual workload.</p>
+<section id="role">
+<p class="eyebrow">My Role</p>
+<h2>Independent ownership from planning to implementation.</h2>
+<ul>
+<li>Understood the main commercial and technical support needs.</li>
+<li>Defined the purpose and scope of each chatbot experience.</li>
+<li>Mapped the information sources required to answer customer questions.</li>
+<li>Collected public company information through web scraping.</li>
+<li>Processed documents with OCR when their text was not directly accessible.</li>
+<li>Prepared information from company documents and MongoDB.</li>
+<li>Developed the chatbot logic in Python.</li>
+<li>Integrated the solution with the OpenAI API.</li>
+<li>Designed and refined prompts for different customer contexts.</li>
+<li>Applied fine-tuning to improve model behavior for the use case.</li>
+<li>Tested commercial and technical questions and adjusted the solution based on the results.</li>
+<li>Supported the integration of the chatbots into the application.</li>
+<li>Analyzed customer feedback and identified recurring questions for FAQs and support documentation.</li>
+</ul>
+</section>
+<section id="architecture">
+<p class="eyebrow">Data &amp; Architecture</p>
+<h2>Structured and unstructured knowledge in one support flow.</h2>
+<p>The chatbots used information from the company website, internal documents, OCR-processed files, MongoDB records, and commercial and technical support content.</p>
+<p class="stack-line">Website &amp; documents · OCR · MongoDB → Python processing → Prompt engineering &amp; fine-tuning → OpenAI API → Commercial &amp; technical chatbots → Customer feedback</p>
+<p>The commercial chatbot was presented near the beginning of the application journey, while the technical chatbot was available inside the platform for existing customers.</p>
+</section>
+<section id="solution">
+<p class="eyebrow">Solution</p>
+<h2>Prepare the knowledge, separate the contexts, and refine the answers.</h2>
+<p>The project started by identifying the most common commercial and technical questions received by the company.</p>
+<p>I mapped the information needed to answer these questions and prepared data from different sources. Public company information was collected through web scraping, documents were processed using text extraction and OCR, and relevant structured data was obtained from MongoDB.</p>
+<p>Python was used to process and organize the information and integrate the application with the OpenAI API.</p>
+<p>Separate prompt contexts were designed for the two chatbot experiences. The commercial chatbot focused on company services and general information, while the technical chatbot focused on the automotive application and its functionality.</p>
+<p>Prompt engineering was used to define the assistant’s behavior, scope, tone, and expected response format. Fine-tuning was also applied to adapt model behavior to the support context.</p>
+<p>The responses were tested using representative commercial and technical questions. Based on the results and customer feedback, prompts and supporting information were refined.</p>
+<p>The solution also helped reveal recurring questions that could be incorporated into the company’s FAQ, documentation, and customer communication.</p>
+</section>
+<section id="use-cases">
+<p class="eyebrow">Business Use Cases</p>
+<h2>Support across the customer journey.</h2>
+<div class="decision-list">
+<p><strong>Commercial support.</strong> Answering questions about the company’s services and providing information to potential customers at the beginning of the application journey.</p>
+<p><strong>Technical support.</strong> Helping existing customers understand platform processes and application features.</p>
+<p><strong>Information access.</strong> Providing answers based on company documents, website content, and MongoDB data.</p>
+<p><strong>FAQ improvement.</strong> Identifying recurring questions that could be added to support and self-service materials.</p>
+</div>
+</section>
+<section id="decisions">
+<p class="eyebrow">Technical Decisions</p>
+<h2>Choosing the right technique for each information source.</h2>
+<div class="decision-list">
+<p><strong>OpenAI API for natural-language interaction.</strong> The API provided the language capabilities required to interpret customer questions and generate conversational responses.</p>
+<p><strong>Python for processing and integration.</strong> Python prepared information, connected the data sources, implemented chatbot logic, and integrated the application with the OpenAI API.</p>
+<p><strong>Separate chatbot contexts.</strong> Commercial and technical questions required different information and instructions, so their contexts were separated to keep responses aligned with each stage of the customer journey.</p>
+<p><strong>Web scraping for public information.</strong> Web scraping incorporated relevant content already published on the company’s website.</p>
+<p><strong>OCR for document processing.</strong> OCR made information available from documents whose text could not be extracted directly.</p>
+<p><strong>MongoDB as a structured source.</strong> MongoDB provided application and business information that complemented the unstructured sources.</p>
+<p><strong>Prompt engineering and fine-tuning.</strong> Prompts defined the assistant’s purpose, tone, format, and boundaries, while fine-tuning adapted model behavior to the customer-support context.</p>
+</div>
+</section>
+<section id="quality">
+<p class="eyebrow">Data Quality &amp; Reliability</p>
+<h2>Response quality begins with source quality.</h2>
+<ul>
+<li>Reviewed scraped website content before using it.</li>
+<li>Checked OCR output for extraction errors.</li>
+<li>Removed duplicated or irrelevant content.</li>
+<li>Organized information according to commercial and technical contexts.</li>
+<li>Validated MongoDB data used by the solution.</li>
+<li>Tested representative customer questions.</li>
+<li>Compared generated responses with the available source information.</li>
+<li>Reviewed answers that received negative customer feedback.</li>
+<li>Refined prompts and supporting information when inconsistent responses were identified.</li>
+<li>Monitored recurring questions and gaps in the available content.</li>
+</ul>
+</section>
+<section id="trade-offs">
+<p class="eyebrow">Challenges &amp; Trade-offs</p>
+<h2>Automation supported by controlled context.</h2>
+<p>One of the main challenges was combining information from structured and unstructured sources. Website content, documents, OCR output, and MongoDB records had different formats and levels of quality and needed to be prepared before supporting consistent responses.</p>
+<p>Another challenge was separating commercial and technical contexts. A single generic chatbot could provide information that was technically correct but inappropriate for the customer’s stage or specific need.</p>
+<p>The project also required balancing automation with reliability. The chatbots could resolve recurring questions and provide faster access to information, while complex or highly specific situations could still require human assistance.</p>
+</section>
+<section id="results">
+<p class="eyebrow">Results &amp; Impact</p>
+<h2>More than 95% positive customer evaluation.</h2>
+<ul>
+<li>Achieved more than 95% positive customer evaluation for AI-generated service and responses.</li>
+<li>Provided immediate answers to recurring commercial and technical questions.</li>
+<li>Reduced reliance on human assistance for common support situations.</li>
+<li>Created separate support experiences for potential and existing customers.</li>
+<li>Used customer feedback to guide improvements to prompts and source information.</li>
+<li>Helped identify recurring customer questions.</li>
+<li>Supported the expansion and improvement of company FAQs.</li>
+<li>Centralized information from documents, website content, and MongoDB.</li>
+<li>Provided support directly inside the customer’s application journey.</li>
+</ul>
+</section>
+<section id="stack">
+<p class="eyebrow">Tech Stack</p>
+<p class="stack-line">Python · OpenAI API · MongoDB · OCR · Web Scraping · Prompt Engineering · Fine-Tuning</p>
+</section>
+<section id="learning">
+<p class="eyebrow">What I Learned</p>
+<h2>A useful chatbot depends on more than the language model.</h2>
+<p>This project reinforced that developing an AI chatbot involves more than connecting an application to a language model.</p>
+<p>Response quality depended on the reliability of the source information, the separation of commercial and technical contexts, prompt design, and the continuous review of customer feedback.</p>
+<p>I strengthened my ability to work with structured and unstructured data, integrate AI APIs, process documents with OCR, collect information through web scraping, and translate customer-support needs into an AI solution.</p>
+<p>Developing the project independently also strengthened my ability to manage the complete solution lifecycle, from planning and source preparation to testing and implementation support.</p>
+<p>In a future iteration, I would introduce a formal evaluation framework with test questions grouped by topic, expected-answer criteria, response traceability, and automated monitoring of unanswered or poorly rated questions.</p>
 </section>
 </article>
 </div>
