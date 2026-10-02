@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Real-Time App Monitoring Dashboard — Débora Vieira</title>
+<title>App Usage Monitoring Dashboard — Débora Vieira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -28,52 +28,154 @@
 </nav>
 </header>
 <main>
-<section class="case-hero wrap reveal">
+<section class="case-hero cloud-case-hero wrap reveal">
 <div class="case-topline">
 <span>Professional case study</span>
 <span>2024–2025</span>
 </div>
-<p class="case-status">Case study in progress — additional project details are being added.</p>
-<h1>Real-Time App<br>
+<h1>App Usage<br>
 <em>Monitoring Dashboard</em>
 </h1>
-<img class="case-image" src="../assets/images/app-monitoring-final.webp" alt="Real-time application monitoring dashboard with metrics and charts">
+<div class="case-image-frame">
+<img class="case-image" src="../assets/images/app-monitoring-final.webp" alt="Application usage monitoring dashboard with metrics and charts">
+</div>
 </section>
-<div class="case-layout wrap">
-<aside class="case-facts">
-<dl>
-<div>
-<dt>Role</dt>
-<dd>Data Analyst</dd>
-</div>
-<div>
-<dt>Focus</dt>
-<dd>Product analytics &amp; monitoring</dd>
-</div>
-<div>
-<dt>Toolkit</dt>
-<dd>MongoDB, APIs, Looker Studio</dd>
-</div>
-<div>
-<dt>Delivery</dt>
-<dd>Real-time operational dashboard</dd>
-</div>
-</dl>
+<div class="case-layout case-study-layout wrap">
+<aside class="case-facts case-nav" aria-label="Case study sections">
+<nav>
+<a href="#overview">Overview</a>
+<a href="#challenge">Challenge</a>
+<a href="#role">My Role</a>
+<a href="#architecture">Data &amp; Architecture</a>
+<a href="#solution">Solution</a>
+<a href="#metrics">Business Metrics</a>
+<a href="#decisions">Technical Decisions</a>
+<a href="#quality">Data Quality</a>
+<a href="#trade-offs">Challenges &amp; Trade-offs</a>
+<a href="#results">Results &amp; Impact</a>
+<a href="#stack">Tech Stack</a>
+<a href="#learning">What I Learned</a>
+</nav>
 </aside>
 <article class="case-content">
-<section>
-<p class="eyebrow">Context</p>
-<h2>Turn live application activity into a clear view of product performance.</h2>
-<p>Product and business teams needed a reliable way to follow application usage, understand feature adoption and identify meaningful changes without depending on manual reporting.</p>
+<section id="overview">
+<p class="eyebrow">Overview</p>
+<h2>Turning application activity into customer insight.</h2>
+<p>This project involved developing an application usage dashboard to help the company understand customer behavior and identify features with low engagement.</p>
+<p>The dashboard consolidated product-usage information into a centralized analytical view used by Marketing, Sales, and Aftersales teams.</p>
+<p>The objective was to make application activity easier to monitor, support customer-retention initiatives, and guide communication strategies for underused features.</p>
 </section>
-<section>
-<p class="eyebrow">Approach</p>
-<h2>Bring operational indicators together in one monitoring experience.</h2>
-<p>I integrated application data, structured the metrics and developed a real-time dashboard with filters and trend views. The result gave stakeholders a consistent way to monitor activity and investigate changes in user behavior.</p>
+<section id="challenge">
+<p class="eyebrow">The Challenge</p>
+<h2>Understand how each customer used the product.</h2>
+<p>The company offered multiple application features but lacked a centralized view of how each customer interacted with them.</p>
+<p>Without this visibility, business teams had difficulty identifying customers with decreasing activity, understanding which features provided the most value, and detecting functionalities that required additional communication or customer education.</p>
+<p>Marketing needed to identify features that required targeted communication, Sales needed greater visibility into customer engagement, and Aftersales needed customer-level usage information before relationship and support interactions.</p>
 </section>
-<section>
-<p class="eyebrow">Outcome</p>
-<p class="result">Faster visibility into application usage and stronger data support for product and operational decisions.</p>
+<section id="role">
+<p class="eyebrow">My Role</p>
+<h2>From data preparation to dashboard delivery.</h2>
+<ul>
+<li>Understood the monitoring needs of Marketing, Sales, and Aftersales.</li>
+<li>Mapped the available application-usage data across PostgreSQL, MariaDB, and MongoDB.</li>
+<li>Used SQL and Python to extract, clean, standardize, and transform the data.</li>
+<li>Organized application activity by customer, feature, and period.</li>
+<li>Created indicators for feature access and customer engagement.</li>
+<li>Prepared the analytical dataset used by Looker Studio.</li>
+<li>Built the monitoring dashboard and its filters.</li>
+<li>Validated dashboard totals against the source data.</li>
+<li>Updated the dashboard data weekly.</li>
+<li>Supported business teams in interpreting customer-usage patterns.</li>
+</ul>
+</section>
+<section id="architecture">
+<p class="eyebrow">Data &amp; Architecture</p>
+<h2>Multiple databases, one business view.</h2>
+<p>The project used application-usage data stored across PostgreSQL, MariaDB, and MongoDB.</p>
+<p>SQL and Python were used to extract, clean, standardize, and aggregate the records. The processed dataset was then connected to Looker Studio for visualization.</p>
+<p class="stack-line">PostgreSQL · MariaDB · MongoDB → SQL &amp; Python → Analytical dataset → Looker Studio → Marketing · Sales · Aftersales</p>
+<p>The dataset organized application activity by customer, feature, and access date, allowing users to analyze activity by day, week, month, or individual customer.</p>
+<p>The data was updated weekly to provide business teams with a recent view of customer behavior.</p>
+</section>
+<section id="solution">
+<p class="eyebrow">Solution</p>
+<h2>From raw access records to actionable monitoring.</h2>
+<p>The project started by identifying which application activities were relevant to Marketing, Sales, and Aftersales.</p>
+<p>I mapped the available records across the databases and used SQL and Python to clean and transform the application-usage data.</p>
+<p>The transformations organized accesses according to customer, application feature, access date, and daily, weekly, and monthly periods.</p>
+<p>The resulting dataset was connected to Looker Studio, where I created a dashboard displaying the total number of accesses for each feature.</p>
+<p>Users could filter the information by day, week, month, and customer. This allowed the same dashboard to support both an overall product analysis and a detailed view of a specific customer’s activity.</p>
+<p>The dashboard was updated weekly and provided a shared source of information for customer engagement and feature adoption analysis.</p>
+</section>
+<section id="metrics">
+<p class="eyebrow">Business Metrics</p>
+<h2>Usage indicators designed for business action.</h2>
+<div class="decision-list">
+<p><strong>Total feature accesses.</strong> Total number of recorded accesses for each application feature.</p>
+<p><strong>Accesses by customer.</strong> Application activity associated with an individual customer.</p>
+<p><strong>Daily, weekly, and monthly usage.</strong> Feature-access totals viewed at different time granularities.</p>
+<p><strong>Low-engagement features.</strong> Features with comparatively low usage during the selected period.</p>
+<p><strong>Customers with reduced activity.</strong> Customers whose usage patterns indicated possible disengagement or subscription-cancellation risk.</p>
+</div>
+</section>
+<section id="decisions">
+<p class="eyebrow">Technical Decisions</p>
+<h2>Simple choices for a useful shared view.</h2>
+<div class="decision-list">
+<p><strong>SQL and Python for data preparation.</strong> They were used to combine, clean, standardize, and aggregate application-usage data from relational and document databases.</p>
+<p><strong>Looker Studio for visualization.</strong> Looker Studio provided an accessible environment for interactive analysis and information sharing across business teams.</p>
+<p><strong>Customer-level filtering.</strong> This allowed Sales and Aftersales to move from an overall product view to the activity of a specific customer.</p>
+<p><strong>Multiple time perspectives.</strong> Daily, weekly, and monthly filters supported both short-term investigation and broader usage analysis.</p>
+<p><strong>Weekly updates.</strong> This frequency provided sufficiently recent information for customer follow-up and marketing planning without requiring real-time processing.</p>
+</div>
+</section>
+<section id="quality">
+<p class="eyebrow">Data Quality &amp; Reliability</p>
+<h2>Consistent access counts across three databases.</h2>
+<ul>
+<li>Checked whether customer and feature identifiers were available.</li>
+<li>Standardized feature names across the source systems.</li>
+<li>Validated access dates and reporting periods.</li>
+<li>Removed or investigated duplicated records.</li>
+<li>Checked whether activity was associated with the correct customer.</li>
+<li>Aggregated accesses consistently across daily, weekly, and monthly views.</li>
+<li>Compared dashboard totals with the source data.</li>
+<li>Reviewed unexpected increases or decreases in feature activity.</li>
+<li>Validated filters and customer-level results before publishing updates.</li>
+</ul>
+</section>
+<section id="trade-offs">
+<p class="eyebrow">Challenges &amp; Trade-offs</p>
+<h2>Usage is a signal, not a complete explanation.</h2>
+<p>One of the main challenges was consolidating activity records from relational and document databases into a consistent analytical dataset.</p>
+<p>A high number of accesses did not necessarily represent customer satisfaction, while low activity did not automatically confirm that a customer intended to cancel. Usage data therefore served as an indicator of possible disengagement rather than definitive proof of churn.</p>
+<p>The weekly refresh frequency was sufficient for customer follow-up and campaign planning, but it did not support immediate operational monitoring. This was an intentional balance between business needs and processing effort.</p>
+</section>
+<section id="results">
+<p class="eyebrow">Results &amp; Impact</p>
+<h2>A shared view for more informed customer actions.</h2>
+<ul>
+<li>Improved visibility into how customers used application features.</li>
+<li>Identified features with comparatively low engagement.</li>
+<li>Supported targeted communication campaigns for underused features.</li>
+<li>Helped identify customers with reduced activity and potential subscription-cancellation risk.</li>
+<li>Provided Aftersales with customer-level usage reports before meetings or support interactions.</li>
+<li>Helped Sales and Aftersales understand which features each customer used most frequently.</li>
+<li>Centralized application-usage information in a single dashboard.</li>
+<li>Enabled analysis by customer and by daily, weekly, or monthly period.</li>
+</ul>
+</section>
+<section id="stack">
+<p class="eyebrow">Tech Stack</p>
+<p class="stack-line">Python · SQL · PostgreSQL · MariaDB · MongoDB · Looker Studio</p>
+</section>
+<section id="learning">
+<p class="eyebrow">What I Learned</p>
+<h2>Product data becomes valuable when it leads to action.</h2>
+<p>This project reinforced that product-usage data becomes more valuable when it is connected to clear business actions.</p>
+<p>The dashboard did more than show how many times each feature was accessed. It helped different teams decide which customers required additional attention, which features needed better communication, and how customer conversations could be personalized.</p>
+<p>I strengthened my ability to combine data from different database technologies, transform application activity into business indicators, and design the same analytical solution for different audiences.</p>
+<p>I also learned that reduced activity should be treated as a warning signal rather than definitive evidence of churn. In a future iteration, I would combine usage with subscription history, customer-support interactions, satisfaction indicators, and previous engagement patterns to develop a more reliable churn-risk model.</p>
 </section>
 </article>
 </div>
